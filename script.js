@@ -8,9 +8,9 @@ let gallery = document.getElementById('gallery');
 //Each Story uses the same 3 in different order
 
 let story1 = [
-    {img: image2},
+    {img: image3},
     {img: image1},
-    {img: image3}
+    {img: image2}
 ];
 
 let story2 = [{img:image3},

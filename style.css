@@ -6,7 +6,7 @@
 }
 
 
-#boy_run, #rain, #dog{      
+.gallery{      
     height: 200px;
     width: 200px;
     cursor: pointer;
