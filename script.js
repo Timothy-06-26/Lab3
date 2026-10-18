@@ -1,7 +1,7 @@
 let image1 = document.getElementById('boy_run');
 let image2 = document.getElementById('rain');
 let image3 = document.getElementById('dog');
-let caption = document.getElementById('caption');
+
 
 
 let allImages = [image1, image2, image3];
