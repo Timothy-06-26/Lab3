@@ -1,10 +1,9 @@
 let image1 = document.getElementById('boy_run');
 let image2 = document.getElementById('rain');
 let image3 = document.getElementById('dog');
+let gallery = document.getElementById('gallery');
 
 
-
-let allImages = [image1, image2, image3];
 
 //Each Story uses the same 3 in different order
 
@@ -19,21 +18,48 @@ let story2 = [{img:image3},
       {img:image1}
     ];
 
-function story1(){
-    image2.style.display = 'block';
-    image1.style.display = 'none';
-    image3.style.display = 'none';
+    let currentStory = story1;
+let currentStep = 0;
+
+function highlightStep(){
+    image2.classList.remove('active');
+    image1.classList.remove('active');
+    image3.classList.remove('active');
+}
+
+let step = currentStory[currentStep];
+step.img.classList.add('active');
+
+
+function startStory(story) {
+    currentStory = story;
+    currentStep = 0;
+    gallery.appendChild(story[0].img);
+    gallery.appendChild(story[1].img);
+    gallery.appendChild(story[2].img);
+    highlightStep();
+}
+ 
+function nextStep() {
+    if (currentStep > 2) {
+        currentStep = 0;
+    }
+    highlightStep();
 }
 
 
-function secondstory() {
-    image3.style.display = 'none';
-    image2.style.display = 'block';
-    image1.style.display = 'none';
-}
+document.getElementById('story-1').addEventListener('click', function() {
+    startStory(story1);
+});
+document.getElementById('story-2').addEventListener('click', function() {
+    startStory(story2);
+});
 
-document.getElementById('story-1').addEventListener('click', firststory);
-document.getElementById('story-2').addEventListener('click', secondstory);
+document.getElementById('next').addEventListener('click', nextStep);
+
+image1.addEventListener('click', function() {jumpToImage(image1); });
+image2.addEventListener('click', function() {jumpToImage(image2); });   
+image3.addEventListener('click', function() {jumpToImage(image3); });
 
 
-firststory();
+startStory(story1);
