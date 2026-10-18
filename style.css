@@ -9,7 +9,10 @@
 #boy_run, #rain, #dog{      
     height: 200px;
     width: 200px;
-    display: none;
     cursor: pointer;
+    border: 5px solid transparent;
 }
 
+.active {
+    border-color: gold;
+}

@@ -41,6 +41,7 @@ function startStory(story) {
 }
  
 function nextStep() {
+    currentStep = currentStep + 1;
     if (currentStep > 2) {
         currentStep = 0;
     }
